@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- Bootstrap-Files -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div style="float: right; margin: 1rem">
+      <a href="/user/signout">Logout</a>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mx-auto">
+        <div class="myform form" style="margin-top: 4rem">
+          <div class="text-center" style="margin-top: 2rem">
+            <h1>User Dashboard</h1>
+            <h4 style="color: red"><%=error%></h4>
+            <br />
+            <div style="background-color: lightgray; padding: 2rem">
+              <H4>RESET PASSWORD</H4>
+              <br />
+              <form action="/user/auth/resetPassword" method="POST">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value="<%=name%>"
+                    class="form-control my-input"
+                    placeholder="Name"
+                    readonly
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value="<%=email%>"
+                    class="form-control my-input"
+                    placeholder="Email"
+                    readonly
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    name="oldPassword"
+                    id="oldPassword"
+                    class="form-control my-input"
+                    placeholder="Current Password"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control my-input"
+                    placeholder="New Password"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    class="form-control my-input"
+                    placeholder="Confirm New Password"
+                  />
+                </div>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-block send-button tx-tfm"
+                  >
+                    CHANGE PASSWORD
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

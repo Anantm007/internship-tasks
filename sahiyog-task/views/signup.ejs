@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Singup</title>
+
+    <!-- Bootstrap-Files -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="text-center">
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <div class="myform form" style="margin-top: 2rem">
+            <div style="background: lightgray; padding: 1rem">
+              <h4 style="color: red"><%=error%></h4>
+              <br />
+
+              <h2>CREATE YOUR ACCOUNT</h2>
+              <br />
+              <form action="/user/auth" method="POST">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control my-input"
+                    id="name"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control my-input"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    min="6"
+                    name="password"
+                    id="password"
+                    class="form-control my-input"
+                    placeholder="Password"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="password"
+                    min="6"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    class="form-control my-input"
+                    placeholder="Confirm Password"
+                  />
+                </div>
+
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6Le8BsQZAAAAAMZukJOl0TwH7xrm2u_f6ESjgrIM"
+                  style="margin-left: 2rem"
+                ></div>
+                <br />
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-block send-button tx-tfm"
+                  >
+                    Create Your Free Account
+                  </button>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="login-or">
+                    <hr class="hr-or" />
+                    <span class="span-or">or</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <a class="btn btn-block btn-primary" href="/">
+                    <i class="fa fa-google"></i> Already Registered? Signin here
+                  </a>
+                </div>
+                <p class="small mt-3">
+                  By signing up, you are indicating that you have read and agree
+                  to the
+                  <a href="#" class="ps-hero__content__link">Terms of Use</a>
+                  and <a href="#">Privacy Policy</a>.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </body>
+</html>
